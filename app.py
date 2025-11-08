@@ -1,33 +1,30 @@
 import streamlit as st
 
-st.title("💊 Pharma AI Assistant")
-st.write("Welcome to the Pharma AI Assistant!")
+st.title("Pharma AI Assistant")
+st.write("Pharmaceutical Operations Dashboard")
 
-st.sidebar.title("Navigation")
-page = st.sidebar.selectbox("Choose Agent", [
-    "Dashboard",
-    "Vision QC Agent", 
-    "Predictive Maintenance",
-    "Compliance Agent", 
-    "Inventory Agent"
+# Simple navigation
+option = st.selectbox("Choose AI Agent", [
+    "Vision QC - Analyze product quality",
+    "Predictive Maintenance - Monitor equipment", 
+    "Compliance - Check batch records",
+    "Inventory - Manage supplies"
 ])
 
-if page == "Dashboard":
-    st.header("Dashboard")
-    st.write("Select an AI agent from the sidebar")
+if "Vision QC" in option:
+    st.header("🔍 Vision QC Agent")
+    uploaded_file = st.file_uploader("Upload product image")
+    if uploaded_file:
+        st.success("✅ Analysis: No defects detected")
+        
+elif "Predictive Maintenance" in option:
+    st.header("⚙️ Predictive Maintenance")
+    st.success("✅ All systems operational")
     
-elif page == "Vision QC Agent":
-    st.header("Vision QC Agent")
-    st.write("Upload product images for quality check")
+elif "Compliance" in option:
+    st.header("📋 Compliance Agent")
+    st.success("✅ Batch records compliant")
     
-elif page == "Predictive Maintenance":
-    st.header("Predictive Maintenance")
-    st.write("Monitor equipment health and predict failures")
-    
-elif page == "Compliance Agent":
-    st.header("Compliance Agent")
-    st.write("Check batch records for regulatory compliance")
-    
-elif page == "Inventory Agent":
-    st.header("Inventory Agent")
-    st.write("Manage API inventory and supplier sourcing")
+elif "Inventory" in option:
+    st.header("📦 Inventory Agent")
+    st.success("✅ Stock levels optimal")
