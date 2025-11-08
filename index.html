@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pharma AI Assistant</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .agent { border: 1px solid #ddd; padding: 20px; margin: 10px 0; border-radius: 8px; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💊 Pharma AI Assistant</h1>
+        <p>Digital operations assistants for pharmaceutical manufacturers</p>
+
+        <div class="agent">
+            <h2>🔍 Vision QC Agent</h2>
+            <p>Analyze product quality from images</p>
+            <input type="file" id="qcImage">
+            <button onclick="analyzeQC()">Analyze Product</button>
+            <div id="qcResult"></div>
+        </div>
+
+        <div class="agent">
+            <h2>⚙️ Predictive Maintenance</h2>
+            <p>Monitor equipment health</p>
+            <button onclick="checkMaintenance()">Check Equipment Status</button>
+            <div id="maintenanceResult"></div>
+        </div>
+
+        <div class="agent">
+            <h2>📋 e-Batch Compliance</h2>
+            <p>Validate batch records</p>
+            <button onclick="checkCompliance()">Validate Batch</button>
+            <div id="complianceResult"></div>
+        </div>
+
+        <div class="agent">
+            <h2>📦 Inventory & Sourcing</h2>
+            <p>Manage API inventory</p>
+            <button onclick="checkInventory()">Check Inventory</button>
+            <div id="inventoryResult"></div>
+        </div>
+    </div>
+
+    <script>
+        function analyzeQC() {
+            document.getElementById('qcResult').innerHTML = 
+                '<p style="color: green;">✅ Analysis Complete: No defects detected. Product quality: Excellent</p>';
+        }
+
+        function checkMaintenance() {
+            document.getElementById('maintenanceResult').innerHTML = 
+                '<p style="color: green;">✅ All systems operational. Next maintenance: 30 days</p>';
+        }
+
+        function checkCompliance() {
+            document.getElementById('complianceResult').innerHTML = 
+                '<p style="color: green;">✅ Batch compliant with Schedule M requirements</p>';
+        }
+
+        function checkInventory() {
+            document.getElementById('inventoryResult').innerHTML = 
+                '<p style="color: green;">✅ Stock levels optimal. Critical APIs: 45 days supply</p>';
+        }
+    </script>
+</body>
+</html>
